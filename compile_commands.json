@@ -1,0 +1,50 @@
+[
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-std=c++11",
+      "-c",
+      "-I./include/",
+      "-o",
+      "obj/grammar.o",
+      "src/grammar.cpp"
+    ],
+    "directory": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator",
+    "file": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator/src/grammar.cpp",
+    "output": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator/obj/grammar.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-std=c++11",
+      "-c",
+      "-I./include/",
+      "-o",
+      "obj/main.o",
+      "src/main.cpp"
+    ],
+    "directory": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator",
+    "file": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator/src/main.cpp",
+    "output": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator/obj/main.o"
+  },
+  {
+    "arguments": [
+      "/usr/bin/g++",
+      "-g",
+      "-Wall",
+      "-std=c++11",
+      "-c",
+      "-I./include/",
+      "-o",
+      "obj/parser.o",
+      "src/parser.cpp"
+    ],
+    "directory": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator",
+    "file": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator/src/parser.cpp",
+    "output": "/home/caiom/Personal/programming/lowlevel/cpp/intro/calculator/obj/parser.o"
+  }
+]
