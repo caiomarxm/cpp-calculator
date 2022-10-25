@@ -1,33 +1,20 @@
+#include <cstdio>
 #include <iostream>
 #include <string>
 #include <stdexcept>
+#include "parser.h"
 
 using namespace std;
 
-class Token {
-  public:
-    Token(char kind, double value);
-    char kind;
-    double value;
-};
 
+/* Token Class Methods */
 Token::Token(char kind, double value) {
   this->kind = kind;
   this->value = value;
 }
 
 
-/* Token Stream Class */
-class TokenStream {
-  public:
-    TokenStream();
-    Token get();
-    void putback(Token token);
-  private:
-    Token buffer {Token('.', 0)};
-    bool is_full {false};
-};
-
+/* TokenStream Class Methods*/
 TokenStream::TokenStream() {
   this->buffer = Token('.', 0);
 }
@@ -43,6 +30,7 @@ Token TokenStream::get(){
   cin >> noskipws;
   cin >> current_char;
   switch (current_char) {
+    case '\n':
     case '+': case '-': case '*': case '/':
     case '(': case ')':
       {
@@ -60,8 +48,8 @@ Token TokenStream::get(){
         return token;
       }
 
-    case '\n':
-      return Token('\n', 0);
+    case 'q':
+      return Token('q', 0);
 
     default:
       string error = "Bad token: ";
@@ -78,7 +66,6 @@ void TokenStream::putback(Token token) {
 
 
 /* Calculator functions */
-TokenStream stream = TokenStream(); // start token stream globally
 
 double expression();
 
@@ -145,6 +132,9 @@ double expression() {
         left -= term();
         token = stream.get();
         break;
+
+      case '\n':
+        return left;
 
       default:
         stream.putback(token);
